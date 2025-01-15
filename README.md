@@ -14,7 +14,7 @@ Backtracking is an algorithm used to examine all possible configurations of a st
 ## Data Plotting and File Handling<br>
 The data for the sudoku is fetched from the array of sudoku provided and is plotted using the Constraint Satisfaction solver.
 
-# How to run implementation
-Two files with sudoku problems have been provided. "tutorial_problem.txt" contains one problem whereas "top95.txt" contains 95 sudoku problems which are solved by the program. In order to run either of the files, the designated code can be edited in main.py. 
-Please run `pip install -r requirements.txt` prior to running main.py to install the required libraries.
-main.py can be run to execute the Sudoku Solver!
+# How to run the implementation!
+Two files containing sudoku problems have been provided. `tutorial_problem.txt` contains one problem whereas `top95.txt` contains 95 sudoku problems which are solved by the program. In order to run either of the files, the designated code can be edited in `main.py`. 
+<br>Please run `pip install -r requirements.txt` prior to running main.py to install the required libraries.
+<br>`main.py` can then be run to execute the Sudoku Solver!
