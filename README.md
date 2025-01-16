@@ -1,4 +1,4 @@
-# Sudoku-Solver
+# AI-Sudoku-Solver
 
 This project is a full scale implementation of an automated Constraint Satisfacation solver for Sudoku. It uses the following principles for the implementation:
 - Arc Consistency functions
