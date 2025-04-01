@@ -21,7 +21,7 @@ Entering NY Times hard Sudoku for April 1st:
 ![Entered Solution](README-Pics/image.png)
 
 Solved sudoku:
-![Solved solution](image2.png)
+![Solved solution](README-Pics/image2.png)
 
 # How to run the implementation!
 Two files containing sudoku problems have been provided. `tutorial_problem.txt` contains one problem whereas `top95.txt` contains 95 sudoku problems which are solved by the program. In order to run either of the files, the designated code can be edited in `main.py`. 
