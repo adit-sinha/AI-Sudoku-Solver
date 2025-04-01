@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import tkinter as Tk
+import display as disp
 
 class PlotResults:
     """
@@ -222,8 +224,6 @@ class MRV():
                     res = (i, j)
         return res
         
-
-
 class AC3:
     """
     This class implements the methods needed to run AC3 on Sudoku. 
@@ -303,7 +303,7 @@ class AC3:
         The method runs AC3 for the arcs involving the variables whose values are 
         already assigned in the initial grid. 
         """
-        # Implement here the code for making the CSP arc consistent as a pre-processing step; this method should be called once before search
+        # Implemented here the code for making the CSP arc consistent as a pre-processing step; this method should be called once before search
         Q = [] #defining the queue
         w = grid.get_width()
         for i in range(w):
@@ -334,7 +334,7 @@ class AC3:
         The method returns True if AC3 detected that the problem can't be solved with the current
         partial assignment; the method returns False otherwise. 
         """
-        # Implement here the domain-dependent version of AC3.
+        # Implemented here the domain-dependent version of AC3.
         while Q:
             i, j = Q.pop()
 
@@ -346,12 +346,11 @@ class AC3:
         
         return True 
         
-
 class Backtracking:
     """
     Class that implements backtracking search for solving CSPs. 
     """
-    # Implemente here the Backtracking search.
+    # Implemented here the Backtracking search.
     
     def search(self, grid, var_selector):
         if grid.is_solved():
@@ -376,9 +375,15 @@ class Backtracking:
                 f_grid = self.search(copy_g, var_selector)
                 if f_grid: return f_grid #checks if None or not
 
-file = open('tutorial_problem.txt', 'r')
+#Asking for Sudoku needed to solve
+disp.askWindow()
+
+#Sample solutions to run:
+file = open("displayprob.txt", "r")
+#file = open('tutorial_problem.txt', 'r')
 #file = open('top95.txt', 'r')
 problems = file.readlines()
+file.close()
 
 for p in problems:
     # Read problem from string
@@ -389,7 +394,14 @@ for p in problems:
     print('Puzzle')
     g.print()
 
-    # # Print the domains of all variables
+    """ 
+    -------------------------------------------------------------------------------------
+    This code prints relevant data about the grid like its domain and cells. It also 
+    tests whether the code is checking the domain of number 4 accurately. As such, it is
+    optional to execute and can be avoided. However, it is crucial for debugging.
+    -------------------------------------------------------------------------------------
+
+    # Print the domains of all variables
     print('Domains of Variables')
     g.print_domains()
     print()
@@ -460,13 +472,24 @@ for p in problems:
     print('Removed all 4s from the first unit')
     g.print_domains()
     print()
+    """
 
     #Changes made to original code:
     b = Backtracking()
 
     r = b.search(g, MRV())
     g = r 
+
+    #Printing solution:
     #THIS CHECKS IF THE CURRENT GRID IS A SOLUTION USING BACKTRACKING
-    print('Is the current grid a solution? ', g.is_solved())
+    #Only prints if the grid is solved
+    if (g.is_solved()):
+        print("Solution found:")
+        disp.solutionFoundWindow(g.get_cells())
+        g.print()
+    else:
+        print("No Solution found :(")
+        disp.solutionNotWindow()
+    
 
 
