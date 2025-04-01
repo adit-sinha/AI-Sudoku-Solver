@@ -20,7 +20,7 @@ A graphical user interface (GUI) has been implemented using `Tkinter` in display
 Entering NY Times hard Sudoku for April 1st:
 ![Entered Solution](README-Pics/image.png)
 
-Solved sudoku:
+Solved sudoku:<br>
 ![Solved solution](README-Pics/image2.png)
 
 # How to run the implementation!
